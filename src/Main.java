@@ -104,8 +104,7 @@ public class Main {
         try {
             do {
                 String name = InputManager.leerCadena("Nombre del dominio");
-                String url = InputManager.leerCadena(
-                        "Dominio web (Ejemplo => https://www.google.com/)").trim();
+                String url = InputManager.leerCadena("URL del dominio web (Ejemplo => https://www.google.com/)").trim();
 
                 if (url.contains("www") || url.contains("http")) {
                     wP = new webPage(name, url, 0);

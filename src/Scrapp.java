@@ -85,7 +85,9 @@ public class Scrapp extends Main {
             br = new BufferedReader(new InputStreamReader(url.openStream()));
             //declaro donde quiero escribir
             fr = new FileWriter(
-                    "D:\\aaaCole2\\ZZZIntelliJ\\FinalPractice_Scrapp\\fileDirectory\\" + fichero);
+                    "src\\" + fichero);
+                    // "D:\\aaaCole2\\ZZZIntelliJ\\FinalPractice_Scrapp\\fileDirectory\\" + fichero);
+            
 
             while ((line = br.readLine()) != null) {
                 fr.write(line);
@@ -112,8 +114,8 @@ public class Scrapp extends Main {
         try {
             File fichero = new File(listWP.get(getIndex()).getName());//creo un fichero con nombre
             BufferedReader lector = new BufferedReader(new FileReader(
-                    "D:\\aaaCole2\\ZZZIntelliJ\\FinalPractice_Scrapp\\fileDirectory\\"
-                            + fichero + ".dat"));
+                    "src\\"+ fichero + ".dat"));
+                    // "D:\\aaaCole2\\ZZZIntelliJ\\FinalPractice_Scrapp\\fileDirectory\\"+ fichero + ".dat"));
             StringBuilder cadena = new StringBuilder();
             String line;
 
@@ -182,14 +184,15 @@ public class Scrapp extends Main {
 
                 for (int i = 0; i < listSearch.size(); i++) {
                     //ruta del .class a ejecutar
-                    pb.directory(new File(
-                            "D:\\aaaCole2\\ZZZIntelliJ\\Practica2_parte1\\out\\production\\Practica2_parte1"));
+                    pb.directory(new File("src"));
+                    // pb.directory(new File("D:\\aaaCole2\\ZZZIntelliJ\\Practica2_parte1\\out\\production\\Practica2_parte1"));
 
                     //"programa", "clase", "args[0]=palabra a buscar", "args[1]=ruta de los archivos"
                     pb.command("java",
                             "Main",
                             listSearch.get(i),
-                            "D:\\aaaCole2\\ZZZIntelliJ\\FinalPractice_Scrapp\\fileDirectory\\" + fichero + ".dat");
+                            "src\\" + fichero + ".dat");
+                            // "D:\\aaaCole2\\ZZZIntelliJ\\FinalPractice_Scrapp\\fileDirectory\\" + fichero + ".dat");
 
                     //inicia el proceso
                     Process salida = pb.start();
@@ -251,7 +254,8 @@ public class Scrapp extends Main {
         ProcessBuilder pb;
         try {
             pb = new ProcessBuilder();
-            pb.command("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe", listWP.get(getIndex()).getUrl());
+            pb.command("C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe", listWP.get(getIndex()).getUrl());
+            // pb.command("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe", listWP.get(getIndex()).getUrl());
             pb.start();
         } catch (Exception e) {
             System.out.println("Error => " + e.getMessage());

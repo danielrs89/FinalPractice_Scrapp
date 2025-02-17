@@ -19,7 +19,8 @@ public class ScrappAll {
                 url = new URL(Main.listWP.get(i).getUrl());
                 fichero = new File(Main.listWP.get(i).getName() + ".dat");
                 br = new BufferedReader(new InputStreamReader(url.openStream()));
-                fr = new FileWriter("D:\\aaaCole2\\ZZZIntelliJ\\FinalPractice_Scrapp\\fileDirectory\\" + fichero);
+                fr = new FileWriter("src\\" + fichero);
+                // fr = new FileWriter("D:\\aaaCole2\\ZZZIntelliJ\\FinalPractice_Scrapp\\fileDirectory\\" + fichero);
                 while ((line = br.readLine()) != null) {
                     fr.write(line);
                 }
@@ -48,7 +49,8 @@ public class ScrappAll {
             while (i < Main.listWP.size()) {
                 File fichero = new File(Main.listWP.get(i).getName());
                 BufferedReader lector = new BufferedReader(new FileReader(
-                        "D:\\aaaCole2\\ZZZIntelliJ\\FinalPractice_Scrapp\\fileDirectory\\" + fichero + ".dat"));
+                        "src\\" + fichero + ".dat"));
+                        // "D:\\aaaCole2\\ZZZIntelliJ\\FinalPractice_Scrapp\\fileDirectory\\" + fichero + ".dat"));
                 StringBuilder cadena = new StringBuilder();
                 String line;
                 while ((line = lector.readLine()) != null) {
